@@ -1,0 +1,8 @@
+Minimum RTO for a single AZ outage: 
+- Within minutes, due to seamless failover to a standby replica in another Availability Zone, ensuring minimal downtime.
+Minimum RTO for a single region outage: 
+- In the order of tens of minutes, as the failover process involves coordination across multiple AZs and potentially across regions.
+Minimum RPO for a single AZ outage:
+- Usually measured in seconds, reflecting low-latency replication mechanisms synchronizing data between Availability Zones.
+Minimum RPO for a single region outage: 
+- Ranges from a few seconds to a few minutes, depending on the efficiency of cross-region replication processes, but generally kept as low as possible to minimize data loss in the event of a catastrophic failure.

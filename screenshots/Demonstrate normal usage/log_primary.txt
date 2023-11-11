@@ -1,0 +1,43 @@
+[root@ip-10-1-10-93 ec2-user]# mysql -uadmin -p -h udacity.cpjwknrp8ptk.us-east-1.rds.amazonaws.com
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 58
+Server version: 8.0.33 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> use udacity
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+
+MySQL [udacity]> CREATE TABLE IF NOT EXISTS udacity1 (
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    age INTEGER
+);
+Query OK, 0 rows affected (0.144 sec)
+
+MySQL [udacity]> INSERT INTO udacity1 (name, age) VALUES ('John Doe', 25);
+Query OK, 1 row affected, 1 warning (0.013 sec)
+
+MySQL [udacity]> show tables;
++-------------------+
+| Tables_in_udacity |
++-------------------+
+| udacity1          |
++-------------------+
+1 row in set (0.002 sec)
+
+MySQL [udacity]> select * from udacity1;
++----+----------+------+
+| id | name     | age  |
++----+----------+------+
+|  0 | John Doe |   25 |
++----+----------+------+
+1 row in set (0.001 sec)
+
+MySQL [udacity]> Ctrl-C -- exit!

@@ -1,0 +1,56 @@
+[root@ip-10-2-10-231 ec2-user]# mysql -uadmin -p -h udacity-replica.cqgzxjg8vzg3.us-west-2.rds.amazonaws.com
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.33 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| udacity            |
++--------------------+
+5 rows in set (0.001 sec)
+
+MySQL [(none)]> use udacity;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MySQL [udacity]> CREATE TABLE IF NOT EXISTS udacity3 (
+    ->     id INTEGER PRIMARY KEY,
+    ->     name TEXT,
+    ->     age INTEGER
+    -> );
+Query OK, 0 rows affected (0.057 sec)
+
+MySQL [udacity]> INSERT INTO udacity3 (name, age) VALUES ('David', 30);
+Query OK, 1 row affected, 1 warning (0.010 sec)
+
+MySQL [udacity]> show tables;
++-------------------+
+| Tables_in_udacity |
++-------------------+
+| udacity1          |
+| udacity2          |
+| udacity3          |
++-------------------+
+3 rows in set (0.002 sec)
+
+MySQL [udacity]> select * from udacity3;
++----+-------+------+
+| id | name  | age  |
++----+-------+------+
+|  0 | David |   30 |
++----+-------+------+
+1 row in set (0.001 sec)
+
+MySQL [udacity]>
