@@ -20,3 +20,7 @@ aws cloudformation deploy --template-file .\vpc.yaml --stack-name vpc-secondary 
 | `cloudformation` | Source Build VPC infrastructure as code |
 | `cloudformation/pvc.yaml` | Cloudformation code |
 | `s3` | Source application |
+
+
+## Link s3 project 
+http://thuypv.s3-website-us-east-1.amazonaws.com/
